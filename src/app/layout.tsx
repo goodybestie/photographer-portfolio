@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "./component/ui/navigation";
+import { Footer}  from "./component/ui/footer";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,12 +25,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* <Navbar 
+        onHeroSectionClick={() => scrollToSection(HeroSectionRef)}
+        onPortfolioClick={() => scrollToSection(portfolioRef)}
+        onAboutClick={() => scrollToSection(aboutRef)}
+        onContactClick={() => scrollToSection(contactRef)}/> */}
         {children}
+         {/* <Toaster richColors position="top-right" />
+
+        <Footer /> */}
       </body>
     </html>
   );
